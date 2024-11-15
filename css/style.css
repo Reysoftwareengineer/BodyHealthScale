@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0, 141, 141);
+}
+
+.container{
+    width: 50%;
+    height: 300px;
+    margin: auto;
+    padding-top: 60px;
+    /* background-color: rgb(255, 0, 0); */
+}
+
+.top-nav{
+    width: 100%;
+    height: 70px;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.top-nav .logo-kemenkes{
+    width: 150px;
+    height: 70px;
+    /* background-color: blue; */
+    background-image: url(../gambar/Logo_of_the_Ministry_of_Health_of_the_Republic_of_Indonesia\ putih.png);
+    background-position: center center;
+    background-size: cover;
+}
+
+.top-nav .logo-germas{
+    width: 150px;
+    height: 70px;
+    /* background-color: blue; */
+    background-image: url(../gambar/LOGO_GERMAS_NORMALputih.png);
+    background-position: center center;
+    background-size: cover;
+}
+
+.people-vector{
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+    /* background-color: chartreuse; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+.people-vector .people-box{
+    width: 270px;
+    height: 270px;
+    /* background-color: rgb(0, 104, 104); */
+    background-image: url(../gambar/logo1.png);
+    background-position: center center;
+    background-size: 320px;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 2;
+}
+
+.people-box {
+    width: 200px; /* Sesuaikan dengan ukuran gambar */
+    animation: bounce 4s ease-in-out infinite; /* Mengatur animasi */
+}
+
+/* Definisikan animasi naik turun */
+@keyframes bounce {
+    0% {
+        transform: translateY(0); /* Posisi awal */
+    }
+    30% {
+        transform: translateY(-15px); /* Naik lebih rendah */
+    }
+    50% {
+        transform: translateY(-15px); /* Turun sedikit lebih rendah */
+    }
+    70% {
+        transform: translateY(0); /* Kembali ke posisi awal */
+    }
+    100% {
+        transform: translateY(0); /* Tetap di posisi awal untuk memulai siklus baru */
+    }
+}
+
+.people-vector .box-back{
+    width: 250px;
+    height: 250px;
+    /* background-color: rgb(0, 104, 104); */
+    border-radius: 20px;
+    position: absolute; /* Menambahkan posisi absolute */
+    z-index: 1; /* Menempatkan box ini di bawah */
+    top: 50%; /* Menempatkan box di tengah vertikal */
+    left: 50%; /* Menempatkan box di tengah horizontal */
+    transform: translate(-50%, -50%); /* Memindahkan box agar center */
+}
+
+.box-text{
+    width: 100%;
+    height: 100px;
+    /* background-color: chocolate; */
+}
+.box-text .text{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.next-button {
+    display: inline-block;
+    padding: 5px 20px;
+    font-size: 24px; /* Ukuran font lebih besar */
+    color: #fff;
+    background: linear-gradient(45deg, #0056b3, #007bff); /* Gradien latar belakang biru tua */
+    border: none;
+    border-radius: 10px; /* Membuat sudut lebih melengkung */
+    text-decoration: none;
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transisi halus */
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.6); /* Bayangan */
+    position: relative; /* Untuk efek pseudo-elemen */
+    overflow: hidden; /* Untuk menghindari efek keluar dari tombol */
+}
+
+.next-button::after {
+    content: ''; /* Membuat elemen pseudo */
+    position: absolute;
+    top: 100%; /* Menempatkan di luar tombol */
+    left: 50%; /* Tengah */
+    width: 300%; /* Lebar lebih besar dari tombol */
+    height: 300%; /* Tinggi lebih besar dari tombol */
+    background: rgba(255, 255, 255, 0.1); /* Warna transparan */
+    border-radius: 50%; /* Sudut melengkung */
+    transition: top 0.4s ease, left 0.4s ease; /* Transisi halus */
+    z-index: 0; /* Menempatkan di belakang */
+}
+
+.next-button:hover::after {
+    top: 0; /* Naik ke atas saat hover */
+    left: 0; /* Bergerak ke kiri saat hover */
+}
+
+.next-button:hover {
+    background: linear-gradient(45deg, #007bff, #0056b3); /* Mengubah urutan gradien saat hover */
+    transform: translateY(-3px); /* Angkat tombol saat hover */
+    box-shadow: 0 8px 20px rgba(0, 86, 179, 0.8); /* Bayangan lebih dalam saat hover */
+}
+
+.next-button:active {
+    transform: translateY(0); /* Kembali ke posisi semula saat di-klik */
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.6); /* Kembali ke bayangan awal */
+}
+
+.next-button {
+    animation: slide 2s ease-in-out infinite; /* Durasi animasi 4 detik, mengulangi tanpa jeda */
+}
+
+/* Definisikan animasi geser ke kanan */
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* Posisi awal */
+    }
+    30% {
+        transform: translateX(10px); /* Geser ke kanan */
+    }
+    70% {
+        transform: translateX(0px); /* Tetap di posisi geser */
+    }
+    100% {
+        transform: translateX(0); /* Kembali ke posisi awal */
+    }
+}
+
+/* Media queries for smartphone */
+@media (max-width: 480px) {
+    .container{
+        width: 95%;
+    }
+    .box-text .text{
+        font-size: 30px;
+    }
+}

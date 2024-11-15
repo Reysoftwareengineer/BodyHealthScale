@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Posisikan elemen di awal */
+  background: linear-gradient(135deg, rgba(76, 103, 214, 0.8), rgba(185, 147, 214, 0.8)), url('https://source.unsplash.com/random/1920x1080');
+  background-size: cover;
+  backdrop-filter: blur(5px);
+  min-height: 100vh; /* Minimal setinggi layar */
+  padding: 2rem 0; /* Tambahkan padding untuk jarak dari atas dan bawah */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px; /* Tentukan lebar maksimal */
+  padding: 1rem;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 1s ease-out;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.info-card h1 {
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  animation: slideIn 1s ease-out;
+}
+
+.info-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+  text-align: justify;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #4c67d6, #b993d6);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #3a54b0, #9a7bbd);
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
